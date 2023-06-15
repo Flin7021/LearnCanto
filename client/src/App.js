@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
 import Header from './components/Header';
 import FlashcardList from './components/FlashcardList';
 import Favorites from './components/Favorites';
@@ -12,10 +13,11 @@ function App() {
   return (
     <Router>
       <div className="app">
+        <Navbar />
         <Header />
         <Switch>
-        <Route exact path="/" component={Home} />
-          <Route path="/" component={FlashcardList} />
+          <Route exact path="/" component={Home} />
+          <Route path="/flashcards" component={FlashcardList} />
           <Route path="/favorites" component={Favorites} />
           <Route path="/login" component={Login} />
           <Route path="/logout" component={Logout} />
